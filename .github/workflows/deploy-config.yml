@@ -20,4 +20,4 @@ jobs:
 
       - name: Appliquer la configuration sur le routeur
         run: |
-          python3 commande_python.py 
+          python3 demo1.py 
