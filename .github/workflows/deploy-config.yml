@@ -1,0 +1,23 @@
+name: Deploy Cisco Config
+
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloner le repository
+        uses: actions/checkout@v3
+
+      - name: Installer Python et Netmiko
+        run: |
+          sudo apt update
+          sudo apt install python3-pip
+          pip3 install netmiko
+
+      - name: Appliquer la configuration sur le routeur
+        run: |
+          python3 commande_python.py 
